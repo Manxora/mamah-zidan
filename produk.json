@@ -1,0 +1,51 @@
+{
+  "toko": "Mamah Zidan",
+  "wa": "62895424969745",
+  "produk": [
+    {
+      "id": 1,
+      "n": "Lontong",
+      "c": "Makanan",
+      "p": 5000,
+      "unit": "3 pcs",
+      "d": "Harga Rp5.000 untuk 3 pcs.",
+      "img": "assets/lontong.jpg?v=20261031fix",
+      "variants": [
+        "Isi Kentang",
+        "Isi Oncom"
+      ]
+    },
+    {
+      "id": 2,
+      "n": "Cireng Isi",
+      "c": "Camilan",
+      "p": 2000,
+      "d": "Cireng dengan isian yang gurih.",
+      "img": "assets/cireng-isi.jpg?v=20261031fix",
+      "variants": [
+        "Ayam Pedas",
+        "Original",
+        "Keju",
+        "Sosis",
+        "Ayam Kornet"
+      ]
+    },
+    {
+      "id": 3,
+      "n": "Ketimus",
+      "c": "Makanan",
+      "p": 5000,
+      "unit": "3 pcs",
+      "d": "Harga Rp5.000 untuk 3 pcs.",
+      "img": "assets/ketimus.jpg?v=20261031fix"
+    },
+    {
+      "id": 4,
+      "n": "Peyek",
+      "c": "Camilan",
+      "p": 6000,
+      "d": "Peyek renyah.",
+      "img": "assets/peyek.jpg?v=20261031fix"
+    }
+  ]
+}

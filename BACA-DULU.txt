@@ -1,0 +1,16 @@
+MAMAH ZIDAN - TOKO JAJANAN DENGAN FOTO PRODUK
+
+Isi project:
+- index.html: halaman toko
+- produk.json: data 4 produk dan nomor WhatsApp
+- assets/: foto Lontong, Cireng Isi, Ketimus, dan Peyek
+- jalankan.sh: menjalankan website di Termux
+
+Jalankan di Termux:
+1. Ekstrak folder toko ke direktori Home Termux.
+2. Masuk ke folder project: cd ~/toko
+3. Jalankan: bash jalankan.sh
+4. Buka: http://localhost:8080
+
+Pastikan folder assets dan file produk.json tetap satu project dengan index.html.
+Nomor WhatsApp: 62895424969745
