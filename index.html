@@ -72,6 +72,35 @@ footer{padding:28px 0 90px;color:var(--muted);font-size:.92rem}
 .x{background:none;border:0;color:var(--ink);font-size:1.5rem}
 @media (min-width:760px){.grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}.pic{aspect-ratio:1.5/1}.body{padding:14px 16px 16px}.btn{font-size:1rem;padding:10px}}
 @media (max-width:360px){.grid{gap:9px}.body{padding:10px}.card h3{font-size:1rem}.price{font-size:1rem}.btn{font-size:.8rem}}
+
+/* MAMAH_ZIDAN_V2 */
+.hero{padding:46px 0 28px}
+.hero-kicker{display:inline-flex;align-items:center;gap:8px;background:var(--chip);color:var(--brand);font-size:.78rem;font-weight:800;letter-spacing:.08em;padding:8px 13px;border-radius:999px;margin-bottom:16px}
+.hero h1{max-width:19ch;font-size:clamp(2.25rem,7vw,3.8rem)}
+.hero p{font-size:1.02rem;line-height:1.7}
+.hero-points{display:flex;flex-wrap:wrap;gap:9px;margin-top:17px}
+.hero-points span{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:7px 11px;font-size:.82rem;font-weight:700;color:var(--muted)}
+.section-head{margin:34px 0 16px}
+.section-head h2{font-size:1.55rem;letter-spacing:-.02em}
+.section-head p{color:var(--muted);margin:5px 0 0;font-size:.92rem}
+.benefits{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:8px 0 34px}
+.benefit{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px 13px}
+.benefit strong{display:block;font-size:.95rem;margin-bottom:5px}
+.benefit p{font-size:.82rem;color:var(--muted);margin:0;line-height:1.5}
+.order-note{background:var(--chip);border:1px solid var(--line);border-radius:18px;padding:20px;margin:0 0 34px}
+.order-note h2{font-size:1.3rem;margin-bottom:7px}
+.order-note p{color:var(--muted);font-size:.9rem;margin:0 0 13px}
+.note-link{display:inline-block;background:var(--brand);color:var(--brand-ink);padding:10px 16px;border-radius:999px;text-decoration:none;font-weight:800;font-size:.9rem}
+.product-label{display:inline-block;background:var(--chip);color:var(--brand);font-size:.72rem;font-weight:800;padding:4px 8px;border-radius:7px;margin:2px 0}
+.card{transition:transform .18s ease,box-shadow .18s ease}
+.card:active{transform:scale(.985)}
+.chip{white-space:nowrap}
+@media(max-width:520px){
+ .benefits{grid-template-columns:1fr;gap:9px}
+ .benefit{padding:13px 14px}
+ .hero{padding-top:32px}
+}
+
 </style>
 </head>
 <body>
@@ -82,14 +111,46 @@ footer{padding:28px 0 90px;color:var(--muted);font-size:.92rem}
 
 <main>
 <section class="wrap hero">
-  <h1>Jajanan Tradisional, Cita Rasa Nusantara.</h1>
-  <p>Enak, murah, dan selalu fresh. Pilih camilan favoritmu dan pesan langsung melalui WhatsApp.</p>
-  <input class="search" id="q" type="search" placeholder="Cari produk…" aria-label="Cari produk">
+  <div class="hero-kicker">JAJANAN PILIHAN MAMAH ZIDAN</div>
+  <h1>Temukan Jajanan Favoritmu, Pesan Jadi Lebih Mudah.</h1>
+  <p>Nikmati pilihan jajanan tradisional dan camilan favorit. Lihat menu, pilih varian, lalu pesan langsung melalui WhatsApp.</p>
+  <input class="search" id="q" type="search" placeholder="Cari lontong, cireng, peyek…" aria-label="Cari produk">
+  <div class="hero-points">
+    <span>Harga jelas</span>
+    <span>Pilihan varian</span>
+    <span>Pesan via WhatsApp</span>
+  </div>
 </section>
 
 <section class="wrap" aria-label="Katalog">
   <div class="chips" id="chips"></div>
   <div class="grid" id="grid"></div>
+</section>
+
+<section class="wrap" aria-label="Keunggulan toko">
+  <div class="section-head">
+    <h2>Belanja lebih nyaman</h2>
+    <p>Semua informasi penting tersedia sebelum kamu memesan.</p>
+  </div>
+  <div class="benefits">
+    <article class="benefit">
+      <strong>Menu mudah dipilih</strong>
+      <p>Lihat pilihan jajanan, harga, dan varian dalam satu halaman.</p>
+    </article>
+    <article class="benefit">
+      <strong>Pesanan lebih praktis</strong>
+      <p>Masukkan produk ke keranjang dan kirim rincian pesanan melalui WhatsApp.</p>
+    </article>
+    <article class="benefit">
+      <strong>Konfirmasi langsung</strong>
+      <p>Tanyakan ketersediaan produk dan detail pesanan langsung kepada penjual.</p>
+    </article>
+  </div>
+  <div class="order-note">
+    <h2>Mau pesan atau tanya dulu?</h2>
+    <p>Pilih produk yang kamu suka. Untuk memastikan ketersediaan, ongkos kirim, dan detail pembayaran, silakan hubungi Mamah Zidan melalui WhatsApp.</p>
+    <a class="note-link" id="v2Contact" target="_blank" rel="noopener">Hubungi Mamah Zidan</a>
+  </div>
 </section>
 
 <section class="steps"><div class="wrap">
@@ -206,6 +267,7 @@ fetch("produk.json").then(function(r){return r.json()}).then(function(d){
   document.title=STORE+" – Produk Lokal Pilihan";
   document.querySelector(".logo").textContent=STORE;
   $("fab").href=waLink("Halo "+STORE+", saya mau tanya produk.");
+  var contact = $("v2Contact"); if(contact) contact.href=waLink("Halo "+STORE+", saya mau tanya produk.");
   renderChips();renderGrid();renderCart();
 }).catch(function(){$("grid").innerHTML='<p class="empty">produk.json tidak terbaca. Jalankan lewat server (bash jalankan.sh), jangan buka file langsung.</p>'});
 </script>
